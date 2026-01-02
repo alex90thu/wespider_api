@@ -1,6 +1,6 @@
 import pytest
 from httpx import AsyncClient
-from wespider_api.app import app
+from wespider_api.wespider_api.app import app
 
 @pytest.mark.asyncio
 async def test_summarize(monkeypatch):
@@ -10,7 +10,7 @@ async def test_summarize(monkeypatch):
             {"title": "Recent 2", "url": "http://example.com/2", "source": "S2", "date": "2025-12-29 12:00:00"}
         ]
 
-    monkeypatch.setattr('wespider_api.app.get_wexin_article', fake_get_wexin_article)
+    monkeypatch.setattr('wespider_api.wespider_api.app.get_wexin_article', fake_get_wexin_article)
 
     async with AsyncClient(app=app, base_url='http://test') as client:
         resp = await client.post('/summarize', json={"query":"AI","top":2,"max_age_days":14})
