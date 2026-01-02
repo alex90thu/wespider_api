@@ -21,7 +21,7 @@ uvicorn wespider_api.app:app --reload --host localhost --port 7000
 3. Test:
 
 ```bash
-curl -X POST "http://localhost:7000/summarize" -H "Content-Type: application/json" -d '{"query":"上海交通大学","top":2,"max_age_days":14}'
+curl -X POST "http://localhost:7000/summarize" -H "Content-Type: application/json" -d '{"query":"artificial intelligence","top":2,"max_age_days":14}'
 ```
 
 Docs & notes
