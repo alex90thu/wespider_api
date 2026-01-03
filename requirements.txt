@@ -4,4 +4,4 @@ httpx==0.24.1
 python-dotenv==1.0.0
 pytest==7.4.0
 pytest-asyncio==0.22.0
-miku_ai==0.1.0
+git+https://github.com/alex90thu/Miku_Spider.git@feature/max-age-days#egg=miku_ai
