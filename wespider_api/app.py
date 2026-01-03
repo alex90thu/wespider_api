@@ -1,7 +1,16 @@
 import os
+import sys
 from typing import Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+
+# Ensure the repository root is first on sys.path so the local `miku_ai` package
+# in this workspace is imported instead of any same-named PyPI package.
+from pathlib import Path
+repo_root = Path(__file__).resolve().parents[2]
+if str(repo_root) not in sys.path:
+    sys.path.insert(0, str(repo_root))
+
 from miku_ai import get_wexin_article
 
 app = FastAPI(title="Wespider API")

@@ -1,1 +1,6 @@
 tests/
+uvicorn.log
+uvicorn.pid
+wespider_api.code-workspace
+.gitignore
+tests/__pycache__/
